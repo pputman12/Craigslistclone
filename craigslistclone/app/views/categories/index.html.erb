@@ -1,0 +1,21 @@
+<h1>Listing categories</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  <% @categories.group_by(&:group).each do |group, categories| %>
+    <h3><%= group %></h3>
+    <% categories.each do | category | %>
+      <%= link_to category.title, category_posts_path(category) %> <br>
+    <% end %>
+  <% end %>
+  
+  
+</table>
+
+<br />
+
+<%= link_to 'New Category', new_category_path %>
