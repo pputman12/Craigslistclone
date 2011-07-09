@@ -5,13 +5,13 @@
 
 <% @posts.each do |post| %>
   <tr>
-    <td><%= link_to post.title, [@category, post] %></td>
+    <td><%= link_to post.title, [post.category, post] %></td>
     <td><%= post.user.email %></td>
-    <td><%= link_to 'Destroy', [@category, post], confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Destroy', [post.category, post], confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Post', new_category_post_path(@category) %>
+<%= link_to 'New Post', new_category_post_path(@category) if @category %>

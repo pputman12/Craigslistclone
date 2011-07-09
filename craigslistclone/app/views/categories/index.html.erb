@@ -7,7 +7,7 @@
     <th></th>
   </tr>
   <% @categories.group_by(&:group).each do |group, categories| %>
-    <h3><%= group %></h3>
+    <h3><%= link_to group, group_posts_path(group)  %></h3>
     <% categories.each do | category | %>
       <%= link_to category.title, category_posts_path(category) %> <br>
     <% end %>

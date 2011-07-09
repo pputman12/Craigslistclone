@@ -4,8 +4,12 @@ Craigslistclone::Application.routes.draw do
   devise_for :users
   
   root :to => 'categories#index'
+  
+  resources :groups do
+    resources :posts
+  end
 
-  resources :categories do
+  resources :categories do 
     resources :posts
   end
   

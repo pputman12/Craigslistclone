@@ -4,8 +4,13 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = @category.posts
-    #@posts = Post.all
+    
+    if @category
+      @posts = @category.posts
+    elsif params[:group_id]
+      @posts = Post.where(:category_id => Category.where(:group => params[:group_id]).collect(&:id))
+    end
+    
 
     respond_to do |format|
       format.html # index.html.erb
