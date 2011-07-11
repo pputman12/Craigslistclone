@@ -6,9 +6,9 @@ class PostsController < ApplicationController
   def index
     
     if @category
-      @posts = @category.posts
+      @posts = @category.posts.where(:city_id => current_city.id)
     elsif params[:group_id]
-      @posts = Post.where(:category_id => Category.where(:group => params[:group_id]).collect(&:id))
+      @posts = Post.where(:category_id => Category.where(:group => params[:group_id], :city_id => current_city.id).collect(&:id))
     end
     
 
@@ -51,6 +51,7 @@ class PostsController < ApplicationController
   def create
     @post = @category.posts.build(params[:post])
     @post.user = current_user
+    @post.city = current_city
     respond_to do |format|
       if @post.save
         format.html { redirect_to [@category, @post], notice: 'Post was successfully created.' }
