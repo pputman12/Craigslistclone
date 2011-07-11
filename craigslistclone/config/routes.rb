@@ -1,10 +1,20 @@
+require_dependency "subdomain.rb"
 Craigslistclone::Application.routes.draw do
 
 
+ 
+
   devise_for :users
   
-  root :to => 'categories#index'
+  constraints(Subdomain) do
+    match '/' => 'cities#show'
+  end
   
+  root :to => 'cities#index'
+  resources :cities do
+     resources :categories
+   end
+   
   resources :groups do
     resources :posts
   end

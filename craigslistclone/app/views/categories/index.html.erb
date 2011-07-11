@@ -1,11 +1,5 @@
-<h1>Listing categories</h1>
 
-<table>
-  <tr>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+
   <% @categories.group_by(&:group).each do |group, categories| %>
     <h3><%= link_to group, group_posts_path(group)  %></h3>
     <% categories.each do | category | %>
@@ -14,7 +8,6 @@
   <% end %>
   
   
-</table>
 
 <br />
 

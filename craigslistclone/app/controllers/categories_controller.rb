@@ -1,6 +1,9 @@
 class CategoriesController < ApplicationController
   # GET /categories
   # GET /categories.json
+  before_filter :set_city
+  
+  
   def index
     @categories = Category.all
 
@@ -39,7 +42,9 @@ class CategoriesController < ApplicationController
   # POST /categories
   # POST /categories.json
   def create
-    @category = Category.new(params[:category])
+    
+    @category = @city.categories.build(params[:category])
+  
 
     respond_to do |format|
       if @category.save
@@ -79,4 +84,11 @@ class CategoriesController < ApplicationController
       format.json { head :ok }
     end
   end
+  
+  private
+  
+  def set_city
+    @city = City.find(params[:city_id]) if params[:city_id]
+  end
+
 end
