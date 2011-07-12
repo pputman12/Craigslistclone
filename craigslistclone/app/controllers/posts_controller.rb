@@ -33,7 +33,7 @@ class PostsController < ApplicationController
   # GET /posts/new.json
   def new
     
-    @post = Post.new
+    @post = Post.new(:category_id => @category.try(:id))
     
     respond_to do |format|
       format.html # new.html.erb
@@ -49,7 +49,11 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    @post = @category.posts.build(params[:post])
+    if @category
+      @post = @category.posts.build(params[:post])
+    else
+      @post = Post.new(params[:post])
+    end
     @post.user = current_user
     @post.city = current_city
     respond_to do |format|

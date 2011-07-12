@@ -7,7 +7,7 @@ Craigslistclone::Application.routes.draw do
   devise_for :users
   
   constraints(Subdomain) do
-    match '/' => 'categories#index'
+    match '/' => 'cities#show'
   end
   
   root :to => 'cities#index'
@@ -22,6 +22,8 @@ Craigslistclone::Application.routes.draw do
   resources :categories do 
     resources :posts
   end
+  
+  resources :posts
   
   
   
