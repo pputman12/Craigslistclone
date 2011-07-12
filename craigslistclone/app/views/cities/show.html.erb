@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @city.name %>
+</p>
+
+<table>
+<% @posts.each do |post| %>
+  <tr>
+    <td><%= link_to post.title, [post.category, post] %></td>
+    <td><%= post.user.email %></td>
+  </tr>
+<% end %>
+</table>
+
+
+
+
+
+
+
+<%= link_to 'Back', cities_path %>
