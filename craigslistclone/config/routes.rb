@@ -1,5 +1,7 @@
 require_dependency "subdomain.rb"
 Craigslistclone::Application.routes.draw do
+  resources :stories
+
   resources :searches
 
   devise_for :users

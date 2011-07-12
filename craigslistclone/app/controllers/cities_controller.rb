@@ -23,7 +23,8 @@ class CitiesController < ApplicationController
     
     @posts = @city.posts.order("created_at desc").limit(10).all
     
-      
+    @stories = @city.stories
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @city }

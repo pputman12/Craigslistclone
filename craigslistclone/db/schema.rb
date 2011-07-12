@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110712220844) do
+ActiveRecord::Schema.define(:version => 20110712224602) do
 
   create_table "categories", :force => true do |t|
     t.string   "title"
@@ -46,6 +46,16 @@ ActiveRecord::Schema.define(:version => 20110712220844) do
     t.float    "maximum_price"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "stories", :force => true do |t|
+    t.string   "author"
+    t.string   "title"
+    t.text     "content"
+    t.string   "picture"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "city_id"
   end
 
   create_table "users", :force => true do |t|
