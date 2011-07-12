@@ -23,6 +23,10 @@
     <%= f.label :category_id, "Category" %><br />
     <%= f.select :category_id, Category.all.collect{|x| [x.title,x.id]} %>
   </div>
+  <div class="field">
+    <%= f.label :price %>
+    <%= f.text_field :price %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

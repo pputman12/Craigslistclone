@@ -21,7 +21,8 @@ class CitiesController < ApplicationController
       @city = City.find(params[:id])
     end
     
-    @posts = @city.posts
+    @posts = @city.posts.order("created_at desc").limit(10).all
+    
       
     respond_to do |format|
       format.html # show.html.erb

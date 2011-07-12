@@ -1,11 +1,8 @@
 require_dependency "subdomain.rb"
 Craigslistclone::Application.routes.draw do
-
-
- 
+  resources :searches
 
   devise_for :users
-  
   constraints(Subdomain) do
     match '/' => 'cities#show'
   end
