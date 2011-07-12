@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_filter :set_category
-  before_filter :authenticate_user!, only: [:create, :edit, :new]
+  #before_filter :authenticate_user!, only: [:create, :edit, :new]
   # GET /posts
   # GET /posts.json
   def index
@@ -32,7 +32,6 @@ class PostsController < ApplicationController
   # GET /posts/new
   # GET /posts/new.json
   def new
-    
     @post = Post.new(:category_id => @category.try(:id))
     
     respond_to do |format|

@@ -14,6 +14,7 @@ gem 'uglifier'
 
 gem 'jquery-rails'
 gem 'devise'
+gem 'carrierwave'
 
 # Use unicorn as the web server
 # gem 'unicorn'
