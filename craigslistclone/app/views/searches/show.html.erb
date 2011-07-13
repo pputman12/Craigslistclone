@@ -1,0 +1,6 @@
+<p id="notice"><%= notice %></p>
+
+<% @search.posts.each do |post| %>
+  <%= post.title %>
+  <%= post.content %><br>
+<% end %>

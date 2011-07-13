@@ -1,0 +1,30 @@
+<h1>Listing stories</h1>
+
+<table>
+  <tr>
+    <th>Author</th>
+    <th>Title</th>
+    <th>Content</th>
+    <th>Picture</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @stories.each do |story| %>
+  <tr>
+    <td><%= story.author %></td>
+    <td><%= link_to story.title, story %></td>
+    <td><%= story.content %></td>
+    <td><%= image_tag story.picture unless story.picture.blank? %></td>
+    
+    
+    <td><%= link_to 'Edit', edit_story_path(story) %></td>
+    <td><%= link_to 'Destroy', story, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Story', new_story_path %>
