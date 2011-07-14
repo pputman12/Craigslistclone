@@ -3,6 +3,28 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body.cities {
-  // Add the cities class to your body tag
-  // Then, place scoped styles here.
+  #top {
+    text-align: center;
+    
+    #search{
+      margin-top: 30px;
+      width: 250px;
+    }
+  }
+  #post_button {
+    align: center;
+    background-color: #1076C1;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    padding: 8px;
+    margin-top: 10px;
+    display: inline-block;
+    a {
+      text-decoration: none;
+    }
+  }
+  #recent_posts {
+    text-align:center;
+  }
 }

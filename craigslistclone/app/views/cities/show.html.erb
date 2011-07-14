@@ -1,9 +1,35 @@
+<div id="top">
+  <img id="logo" src="http://nacnak.com/images/nacnak_banner333434.jpg">
+  <%= form_tag(posts_path, :method => :get) do %>
+    <%= text_field_tag 'search', '', :id => 'search'%>
+    <%= submit_tag 'Search'%>
+  <% end %>
+  <span id="post_button">
+    <%= link_to "Create a FREE Post", new_post_path %>
+  </span>
+</div>
+<div id = "recent_posts">
+  <h3>Recent Posts</h3>
+  <% @posts.each do |post| %>
+    <%= link_to post.title, [post.category, post] %>
+    <%= image_tag post.picture %><br>
+  <% end %>
+</div>
+
+<!--
 <p id="notice"><%= notice %></p>
+
+<div id="searchbar">
+  <%= link_to "Search", new_search_path %> 
+</div>
+
+<div id="post">
+  <%= link_to "Create a Free Post!", new_post_path %>
+</div>
 
 <p>
   <%= @city.name %>
 </p>
-
 <br>
 Recent posts
 <br>
@@ -30,3 +56,4 @@ Stories
   <% end %>
 </table>
 <%= link_to 'Back', cities_path %>
+-->

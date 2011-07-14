@@ -2,19 +2,20 @@
 <html>
 <head>
   <title>Craigslistclone</title>
-  <%= stylesheet_link_tag    "craigslist" %>
+  <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body class="hp">
-  <%= link_to "Home", root_path %> <br>
-  <%= link_to "Sign out", destroy_user_session_path if current_user %> <br>
-  <%= link_to "Browse By Category", categories_path %><br>
-  <%= link_to "Post", new_post_path %><br>
-  <%= link_to "Search", new_search_path %><br>
-  <%= link_to "Change Community", cities_path %>
-
-<%= yield %>
-
-</body>
+<%= content_tag(:body, :class => [controller_name, 'layout'].join(' ')) do %>
+  <div id="newsfeed">
+    <%= render :partial => 'layouts/header' %>
+  </div>
+  <%= yield %>
+  
+  
+  <%= link_to "Home", root_path %> |
+  <%= link_to "Login", destroy_user_session_path if current_user %> |
+  <%= link_to "Browse By Category", categories_path %> |
+  <%= link_to "Search", new_search_path %> |
+<% end %>
 </html>

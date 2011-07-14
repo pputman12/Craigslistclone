@@ -9,6 +9,12 @@ class PostsController < ApplicationController
       @posts = @category.posts.where(:city_id => current_city.id)
     elsif params[:group_id]
       @posts = Post.where(:category_id => Category.where(:group => params[:group_id], :city_id => current_city.id).collect(&:id))
+    elsif current_city
+      if params[:search]
+        @posts = current_city.posts.where(["title LIKE ? OR content LIKE ?", "%#{params[:search]}%", "%#{params[:search]}%"])
+      else
+        @posts = current_city.posts
+      end
     end
     
 

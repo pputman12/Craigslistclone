@@ -24,6 +24,8 @@ class CitiesController < ApplicationController
     @posts = @city.posts.order("created_at desc").limit(10).all
     
     @stories = @city.stories
+    @search = Search.new
+    
     
     respond_to do |format|
       format.html # show.html.erb
