@@ -36,8 +36,11 @@ body {
   }
 }
 
+.center {
+  display: block;
+  text-align: center;
+}
 #footer {
-  text-align:center;
   background-color: #BDCDD4;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
