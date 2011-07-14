@@ -11,11 +11,14 @@
     <%= render :partial => 'layouts/header' %>
   </div>
   <%= yield %>
-  
-  
-  <%= link_to "Home", root_path %> |
-  <%= link_to "Login", destroy_user_session_path if current_user %> |
-  <%= link_to "Browse By Category", categories_path %> |
-  <%= link_to "Search", new_search_path %> |
+  <br>
+  <center>
+    <div id="footer">
+      <%= link_to "Home", root_path %> |
+      <%= link_to "Login", destroy_user_session_path if current_user %> |
+      <%= link_to "Browse By Category", categories_path %> |
+      <%= link_to "Search", new_search_path %>
+    </div>
+  </center>
 <% end %>
 </html>

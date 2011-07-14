@@ -1,11 +1,15 @@
 # encoding: utf-8
 
 class PictureUploader < CarrierWave::Uploader::Base
-
+  include CarrierWave::RMagick
+  
   # Include RMagick or ImageScience support:
   # include CarrierWave::RMagick
   # include CarrierWave::ImageScience
 
+  version :thumb do
+    process :resize_to_fill => [200,200]
+  end
   # Choose what kind of storage to use for this uploader:
   storage :file
   # storage :fog

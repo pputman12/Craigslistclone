@@ -21,7 +21,7 @@ class CitiesController < ApplicationController
       @city = City.find(params[:id])
     end
     
-    @posts = @city.posts.order("created_at desc").limit(10).all
+    @posts = @city.posts.order("created_at desc").limit(5).all
     
     @stories = @city.stories
     @search = Search.new

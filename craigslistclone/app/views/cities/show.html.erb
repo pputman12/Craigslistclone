@@ -10,12 +10,26 @@
 </div>
 <div id = "recent_posts">
   <h3>Recent Posts</h3>
-  <% @posts.each do |post| %>
-    <%= link_to post.title, [post.category, post] %>
-    <%= image_tag post.picture %><br>
-  <% end %>
+  <table>
+    <tr>
+      <% @posts.each do |post| %>
+        <% next if post.picture.try(:thumb).blank? %>
+        <td>
+          <%= link_to [post.category, post] do %>
+            <%= image_tag post.picture.thumb unless post.picture.try(:thumb).blank? %><br>
+            <div class="below-image">
+              <span class="price">
+                $<%= post.price %>
+              </span><br>
+              <%= post.title %>
+            </div>
+          <% end %>
+        </td>
+      <% end %>
+    </tr>
+  </table>
 </div>
-
+<% if false%>
 <!--
 <p id="notice"><%= notice %></p>
 
@@ -57,3 +71,4 @@ Stories
 </table>
 <%= link_to 'Back', cities_path %>
 -->
+<% end %>

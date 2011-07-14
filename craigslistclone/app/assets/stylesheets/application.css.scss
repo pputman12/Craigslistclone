@@ -31,6 +31,27 @@ body {
   a {
     text-decoration: none;
   }
+  a:visited {
+    color:black;
+  }
+}
+
+#footer {
+  text-align:center;
+  background-color: #BDCDD4;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  padding: 8px;
+  margin-top: 10px;
+  display: inline-block;
+  a {
+    color: #0028FE;
+    text-decoration: none;
+  }
+  a:visited {
+    color: #0028FE;
+  }
 }
   
 

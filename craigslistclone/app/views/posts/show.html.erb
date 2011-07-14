@@ -5,7 +5,7 @@
   <b>Title:</b>
   <%=  @post.title %><br><br>
   <%=  @post.content %>
-  <%= image_tag @post.picture %>
+  <%= image_tag @post.picture if @post.picture %>
   
 </p>
 

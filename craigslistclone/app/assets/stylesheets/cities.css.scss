@@ -12,7 +12,6 @@ body.cities {
     }
   }
   #post_button {
-    align: center;
     background-color: #1076C1;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
@@ -22,9 +21,31 @@ body.cities {
     display: inline-block;
     a {
       text-decoration: none;
+      color: white;
+    }
+    a:visited {
+      color: white;
     }
   }
   #recent_posts {
     text-align:center;
+    table {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    a{
+      text-decoration: none;
+    }
+    a:visited {
+      color:black;
+    }
+    .below-image {
+      text-align: left;
+      font-family: "Helvetica", sans-serif;
+      .price {
+        font-weight: bold;
+        font-size: 16pt;
+      }
+    }
   }
 }
