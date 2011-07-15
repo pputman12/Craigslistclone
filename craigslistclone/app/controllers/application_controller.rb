@@ -6,6 +6,6 @@ class ApplicationController < ActionController::Base
   private
   
   def current_city
-     @current_city ||= City.find_by_name(request.subdomain) unless request.subdomain.blank?
+     @current_city ||= City.find_by_subdomain(request.subdomain) unless request.subdomain.blank?
   end
 end

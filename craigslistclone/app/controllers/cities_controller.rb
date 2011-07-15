@@ -15,8 +15,8 @@ class CitiesController < ApplicationController
   def show
    # @city = City.find(params[:id])
    
-    if City.find_by_name(request.subdomain)
-      @city = City.find_by_name(request.subdomain)
+    if City.find_by_subdomain(request.subdomain)
+      @city = City.find_by_subdomain(request.subdomain)
     else
       @city = City.find(params[:id])
     end

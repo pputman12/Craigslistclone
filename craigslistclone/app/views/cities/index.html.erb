@@ -1,20 +1,16 @@
-<h1>Listing cities</h1>
-
+<div class="citylist">
 <table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @cities.each do |city| %>
-  <tr>
-    <td><%= link_to city.name, root_url(:subdomain => city.name) %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
+   <tr>
+     <% @cities.each do |city| %>
+       <% next if city.picture.try(:thumb).blank? %>
+       <td>
+         <%= link_to root_url(:subdomain => city.subdomain) do %>
+           <%= image_tag city.picture.thumb unless city.picture.try(:thumb).blank? %><br />
+         <% end %>
+       </td>
+     <% end %>
+   </tr>
+ </table>
+</div>
 
 <%= link_to 'New City', new_city_path %>
