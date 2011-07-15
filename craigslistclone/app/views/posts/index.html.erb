@@ -1,18 +1,27 @@
 <%= content_tag :h1, @category.title if @category %>
 
-<table>
- 
+<div id='searchresults'>
+  <table>
+    <tr>
+      <% @posts.each do |post| %>
+        <td>
+          <%= link_to [post.category, post] do %>
+            <%= image_tag post.picture.thumb unless post.picture.try(:thumb).blank? %><br />
+            <div class="below-image">
+              <span class="price">
+                <% if post.price %>
+                  $<%= post.price %>
+                <% end %>
+              </span><br />
+              <%= post.title %>
+            </div>
+          <% end %>
+        </td>
+      <% end %>
+    </tr>
+  </table>
+</div>
 
-<% @posts.each do |post| %>
-  <tr>
-    <td><%= link_to post.title, [post.category, post] %></td>
-    <td><%= post.user.email %></td>
-    <td><%=image_tag post.picture.thumb unless post.picture.blank? %></td>
-    
-  </tr>
-<% end %>
-</table>
 
-<br />
 
 <%= link_to 'New Post', new_category_post_path(@category) if @category %>

@@ -23,9 +23,11 @@
           <%= link_to [post.category, post] do %>
             <%= image_tag post.picture.thumb unless post.picture.try(:thumb).blank? %><br />
             <div class="below-image">
-              <span class="price">
-                $<%= post.price %>
-              </span><br />
+              <% if post.price %>
+                <span class="price">
+                  $<%= post.price %>
+                </span><br />
+              <% end %>
               <%= post.title %>
             </div>
           <% end %>

@@ -5,4 +5,19 @@
 body.posts {
   // Add the posts class to your body tag
   // Then, place scoped styles here.
+  
+  #searchresults {
+    text-align:center;
+    
+    table {
+      margin-left:auto;
+      margin-right:auto;
+    }
+    a {
+      text-decoration: none;
+    }
+    a:visited {
+      color:black;
+    }
+  }
 }
