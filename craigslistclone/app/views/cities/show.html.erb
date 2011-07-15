@@ -22,12 +22,12 @@
         <% next if post.picture.try(:thumb).blank? %>
         <td>
           <%= link_to [post.category, post] do %>
-            <%= image_tag post.picture.thumb unless post.picture.try(:thumb).blank? %><br />
+            <%= image_tag post.picture.thumb unless post.picture.try(:thumb).blank? %>
             <div class="below-image">
               <% if post.price %>
                 <span class="price">
                   $<%= post.price %>
-                </span><br />
+                </span>
               <% end %>
               <%= post.title %>
             </div>
