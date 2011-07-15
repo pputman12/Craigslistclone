@@ -6,7 +6,7 @@
       <%= submit_tag 'Search'%>
     </div>
     <div id="change_community">
-      Change Community
+      <%= link_to @city.name + " (change)", cities_path %>
     </div>
   <% end %>
   <span id="post_button">

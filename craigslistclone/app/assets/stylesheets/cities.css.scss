@@ -5,6 +5,10 @@
 body.cities {
   #top {
     text-align:center;
+    
+    a{
+      text-decoration: none;
+    }
   
     #search{
       margin-top: 30px;
@@ -21,6 +25,9 @@ body.cities {
      margin-top: 10px;
      text-align: none;
      display:inline-block;
+      a:visited {
+        color: black;
+      }
    }
    
   #post_button {
