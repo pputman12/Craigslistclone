@@ -4,25 +4,25 @@
 
 body.cities {
   #top {
-    text-align: center;
+    text-align:center;
   
     #search{
       margin-top: 30px;
       text-align:center;
       display:inline-block;
-      
     }
-    #change_community{
-      background-color: #1076C1;
-      -webkit-border-radius: 20px;
-      -moz-border-radius: 20px;
-      border-radius: 20px;
-      padding: 8px;
-      margin-top: 10px;
-      display: inline-block;
-      
-    }
-  }
+ }
+  #change_community {
+     background-color: #1076C1;
+     -webkit-border-radius: 20px;
+     -moz-border-radius: 20px;
+     border-radius: 20px;
+     padding: 8px;
+     margin-top: 10px;
+     text-align: none;
+     display:inline-block;
+   }
+   
   #post_button {
     background-color: #1076C1;
     -webkit-border-radius: 20px;
@@ -30,6 +30,7 @@ body.cities {
     border-radius: 20px;
     padding: 8px;
     margin-top: 10px;
+    text-align: center;
     display: inline-block;
     a {
       text-decoration: none;
