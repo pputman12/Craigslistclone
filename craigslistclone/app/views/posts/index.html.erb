@@ -6,13 +6,13 @@
       <% @posts.each do |post| %>
         <td>
           <%= link_to [post.category, post] do %>
-            <%= image_tag post.picture.thumb unless post.picture.try(:thumb).blank? %><br />
+            <%= image_tag post.picture.thumb.url  %><br />
             <div class="below-image">
-              <span class="price">
-                <% if post.price %>
+              <% if post.price %>
+                <span class="price">
                   $<%= post.price %>
-                <% end %>
-              </span><br />
+                </span><br />
+              <% end %>
               <%= post.title %>
             </div>
           <% end %>
