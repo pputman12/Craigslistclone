@@ -1,8 +1,13 @@
 <div id="top">
-  <img id="logo" src="http://nacnak.com/images/nacnak_banner333434.jpg">
+  <%= image_tag "nacnak_banner333434.jpg", :id => 'logo' %>
   <%= form_tag(posts_path, :method => :get) do %>
-    <%= text_field_tag 'search', '', :id => 'search'%>
-    <%= submit_tag 'Search'%>
+    <div id="search">
+      <%= text_field_tag 'search', '', :id => 'search' %>
+      <%= submit_tag 'Search'%>
+    </div>
+    <div id="change_community">
+      Change Community
+    </div>
   <% end %>
   <span id="post_button">
     <%= link_to "Create a FREE Post", new_post_path %>
@@ -16,11 +21,11 @@
         <% next if post.picture.try(:thumb).blank? %>
         <td>
           <%= link_to [post.category, post] do %>
-            <%= image_tag post.picture.thumb unless post.picture.try(:thumb).blank? %><br>
+            <%= image_tag post.picture.thumb unless post.picture.try(:thumb).blank? %><br />
             <div class="below-image">
               <span class="price">
                 $<%= post.price %>
-              </span><br>
+              </span><br />
               <%= post.title %>
             </div>
           <% end %>
@@ -44,10 +49,10 @@
 <p>
   <%= @city.name %>
 </p>
-<br>
+<br />
 Recent posts
-<br>
-<br>
+<br />
+<br />
 
 <table>
   <% @posts.each do |post| %>
@@ -58,7 +63,7 @@ Recent posts
     </tr>
   <% end %>
 </table>
-<br><br><br>
+<br /><br /><br />
 Stories
 <table>
   <% @stories.each do |story| %>
