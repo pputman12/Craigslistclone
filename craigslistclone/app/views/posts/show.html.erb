@@ -3,10 +3,10 @@
 
 <p>
   <b>Title:</b>
-  <%=  @post.title %><br /><br />
-  <%=  @post.content %>
+  <%= @post.title %>
+  <%= "$"%><%= @post.price %><br /><br />
+  <%= @post.content %><br />
   <%= image_tag @post.picture unless @post.picture.blank? %>
-  
 </p>
 
 
